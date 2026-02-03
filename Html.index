@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoorthi Clinic - Trusted Multi-Specialty Healthcare in Thokkottu, Mangaluru</title>
+    <meta name="description" content="Experience comprehensive healthcare at Spoorthi Clinic. Expert medical, dental, pediatric, orthopedic, and eye care services in Thokkottu, Mangaluru.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1E73BE;
+            --deep-blue: #0F4C81;
+            --accent-green: #28A745;
+            --warm-white: #FDFBF7;
+            --soft-gray: #F5F5F5;
+            --text-dark: #2C3E50;
+            --text-light: #6C757D;
+            --border-light: #E8E8E8;
+        }
+
+```
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Source Sans 3', sans-serif;
+        color: var(--text-dark);
+        line-height: 1.7;
+        background: var(--warm-white);
+        overflow-x: hidden;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--text-dark);
+    }
+
+    /* Navigation */
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-light);
+        transition: all 0.3s ease;
+    }
+
+    .nav-wrapper.scrolled {
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1.2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    .nav-links a:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-blue);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-blue);
+    }
+
+    .nav-links a:hover:after {
+        width: 100%;
+    }
+
+    .cta-button {
+        background: var(--accent-green);
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    }
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-dark);
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+    /* Hero Section */
+    #home {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #E8F4F8 0%, #FFFFFF 50%, #F0F8F0 100%);
+        z-index: -1;
+    }
+
+    .hero-pattern {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        opacity: 0.05;
+        background-image: 
+            radial-gradient(circle at 20% 50%, var(--primary-blue) 1px, transparent 1px),
+            radial-gradient(circle at 80% 80%, var(--accent-green) 1px, transparent 1px);
+        background-size: 50px 50px;
+    }
+
+    .hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .hero-text {
+        animation: fadeInUp 0.8s ease forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        color: var(--deep-blue);
+    }
+
+    .hero-highlight {
+        color: var(--primary-blue);
+        position: relative;
+        display: inline-block;
+    }
+
+    .hero-text p {
+        font-size: 1.25rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        font-weight: 300;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        background: var(--accent-green);
+        color: white;
+        padding: 1.2rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--primary-blue);
+        padding: 1.2rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+        border: 2px solid var(--primary-blue);
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary-blue);
+        color: white;
+    }
+
+    .hero-image {
+        position: relative;
+        animation: fadeIn 1s ease 0.3s forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+
+    .hero-card {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .hero-card:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+        border-radius: 20px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .hero-card:hover:before {
+        opacity: 0.1;
+    }
+
+    .trust-indicators {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .trust-item {
+        text-align: center;
+    }
+
+    .trust-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        font-family: 'Playfair Display', serif;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .trust-label {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-weight: 600;
+    }
+
+    /* Features Section */
+    .features-strip {
+        background: white;
+        padding: 3rem 2rem;
+        border-top: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .features-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .feature-item {
+        text-align: center;
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+    }
+
+    .feature-item:nth-child(1) { animation-delay: 0.1s; }
+    .feature-item:nth-child(2) { animation-delay: 0.2s; }
+    .feature-item:nth-child(3) { animation-delay: 0.3s; }
+    .feature-item:nth-child(4) { animation-delay: 0.4s; }
+
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        box-shadow: 0 10px 30px rgba(30, 115, 190, 0.2);
+    }
+
+    .feature-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        color: var(--deep-blue);
+    }
+
+    .feature-item p {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        line-height: 1.6;
+    }
+
+    /* Services Section */
+    #services {
+        padding: 6rem 2rem;
+        background: var(--warm-white);
+    }
+
+    .services-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-label {
+        color: var(--accent-green);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+        display: block;
+    }
+
+    .section-header h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        color: var(--deep-blue);
+    }
+
+    .section-header p {
+        font-size: 1.15rem;
+        color: var(--text-light);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .service-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2.5rem;
+        transition: all 0.4s ease;
+        border: 1px solid var(--border-light);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover:before {
+        transform: translateX(0);
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, rgba(30, 115, 190, 0.1), rgba(40, 167, 69, 0.1));
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--deep-blue);
+    }
+
+    .service-card p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+    }
+
+    .service-list {
+        list-style: none;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-list li {
+        padding: 0.5rem 0;
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .service-list li:before {
+        content: '✓';
+        color: var(--accent-green);
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    /* About Section */
+    #about {
+        padding: 6rem 2rem;
+        background: white;
+    }
+
+    .about-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+    }
+
+    .about-image {
+        position: relative;
+    }
+
+    .about-image-wrapper {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        position: relative;
+    }
+
+    .about-image-wrapper:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(30, 115, 190, 0.3), transparent);
+    }
+
+    .about-badge {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        background: white;
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .badge-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        font-family: 'Playfair Display', serif;
+        line-height: 1;
+    }
+
+    .badge-text {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-weight: 600;
+        margin-top: 0.3rem;
+    }
+
+    .about-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--deep-blue);
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+    }
+
+    .why-choose {
+        margin-top: 3rem;
+    }
+
+    .why-choose h3 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: var(--deep-blue);
+    }
+
+    .why-list {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .why-item {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: var(--soft-gray);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .why-item:hover {
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transform: translateX(10px);
+    }
+
+    .why-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .why-text h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--deep-blue);
+    }
+
+    .why-text p {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+        padding: 6rem 2rem;
+        background: var(--soft-gray);
+    }
+
+    .testimonials-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .testimonial-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .quote-icon {
+        font-size: 3rem;
+        color: var(--primary-blue);
+        opacity: 0.2;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .author-avatar {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .author-info h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+        color: var(--deep-blue);
+    }
+
+    .author-info p {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        margin: 0;
+    }
+
+    .rating {
+        color: #FFA500;
+        font-size: 1.1rem;
+        margin-top: 0.3rem;
+    }
+
+    /* Contact Section */
+    #contact {
+        padding: 6rem 2rem;
+        background: white;
+    }
+
+    .contact-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    .contact-info h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--deep-blue);
+    }
+
+    .contact-info p {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+    }
+
+    .info-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .info-item {
+        display: flex;
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    .info-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, rgba(30, 115, 190, 0.1), rgba(40, 167, 69, 0.1));
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-blue);
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+
+    .info-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--deep-blue);
+    }
+
+    .info-content p {
+        font-size: 1rem;
+        margin: 0;
+        color: var(--text-dark);
+    }
+
+    .info-content a {
+        color: var(--primary-blue);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .info-content a:hover {
+        color: var(--accent-green);
+    }
+
+    .hours-table {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .hours-table tr {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .hours-table tr:last-child {
+        border-bottom: none;
+    }
+
+    .hours-table td:first-child {
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .hours-table td:last-child {
+        color: var(--text-light);
+    }
+
+    .contact-form-wrapper {
+        background: var(--soft-gray);
+        padding: 3rem;
+        border-radius: 20px;
+        transition: all 0.5s ease;
+    }
+
+    .contact-form-wrapper.highlight {
+        background: white;
+        box-shadow: 0 0 0 3px var(--accent-green), 0 20px 60px rgba(40, 167, 69, 0.2);
+        animation: pulseHighlight 1s ease;
+    }
+
+    @keyframes pulseHighlight {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+
+    .contact-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--deep-blue);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--border-light);
+        border-radius: 10px;
+        font-size: 1rem;
+        font-family: 'Source Sans 3', sans-serif;
+        transition: border-color 0.3s ease;
+        background: white;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .map-container {
+        margin-top: 3rem;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 400px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Footer */
+    footer {
+        background: var(--deep-blue);
+        color: white;
+        padding: 3rem 2rem 2rem;
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-about h3 {
+        color: white;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-about p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-section h4 {
+        color: white;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent-green);
+    }
+
+    .footer-bottom {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .hero-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+        }
+
+        .features-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .about-container,
+        .contact-container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .footer-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            flex-direction: column;
+            width: 100%;
+            background: white;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease;
+            align-items: flex-start;
+        }
+
+        .nav-links.active {
+            left: 0;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+        }
+
+        .features-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .services-grid,
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+        }
+
+        .footer-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Smooth Scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Animations on Scroll */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-wrapper">
+        <nav>
+            <a href="#home" class="logo">
+                <div class="logo-icon">✚</div>
+                Spoorthi Clinic
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:08242461001" class="cta-button">📞 Call Now</a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+
+```
+<!-- Hero Section -->
+<section id="home">
+    <div class="hero-background">
+        <div class="hero-pattern"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Your Family's <span class="hero-highlight">Trusted Healthcare</span> Partner in Thokkottu</h1>
+            <p>Experience comprehensive, multi-specialty care under one roof. From pediatric consultations to orthopedic treatments, our experienced doctors are dedicated to your well-being.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">📅 Book Appointment</a>
+                <a href="tel:08242461001" class="btn-secondary">📞 Call Now</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-card">
+                <h3 style="color: var(--deep-blue); margin-bottom: 1.5rem; font-size: 1.5rem;">Why Families Choose Us</h3>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-number">15+</span>
+                        <span class="trust-label">Years Experience</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">5+</span>
+                        <span class="trust-label">Specialties</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">1000+</span>
+                        <span class="trust-label">Happy Patients</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">★ 4.8</span>
+                        <span class="trust-label">Patient Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Strip -->
+<div class="features-strip">
+    <div class="features-container">
+        <div class="feature-item">
+            <div class="feature-icon">👨‍⚕️</div>
+            <h3>Expert Doctors</h3>
+            <p>Highly qualified specialists with years of experience</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">🏥</div>
+            <h3>Multi-Specialty Care</h3>
+            <p>All healthcare needs under one convenient roof</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">⏰</div>
+            <h3>Flexible Hours</h3>
+            <p>Open 6 days a week with extended evening hours</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">📍</div>
+            <h3>Prime Location</h3>
+            <p>Easily accessible in the heart of Thokkottu</p>
+        </div>
+    </div>
+</div>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="services-container">
+        <div class="section-header fade-in">
+            <span class="section-label">Our Specialties</span>
+            <h2>Comprehensive Healthcare Services</h2>
+            <p>From routine check-ups to specialized treatments, we provide complete healthcare solutions for your entire family.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">🩺</div>
+                <h3>General & Medical Services</h3>
+                <p>Complete primary care for all your health concerns with personalized attention and thorough examinations.</p>
+                <ul class="service-list">
+                    <li>General Health Check-ups</li>
+                    <li>Chronic Disease Management</li>
+                    <li>Preventive Care & Vaccinations</li>
+                    <li>Minor Procedures</li>
+                    <li>Health Screenings</li>
+                </ul>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦴</div>
+                <h3>Orthopaedics</h3>
+                <p>Expert orthopedic care for bone, joint, and muscle conditions with advanced treatment options.</p>
+                <ul class="service-list">
+                    <li>Joint Pain Treatment</li>
+                    <li>Sports Injuries</li>
+                    <li>Fracture Care</li>
+                    <li>Arthritis Management</li>
+                    <li>Posture Correction</li>
+                </ul>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🦷</div>
+                <h3>Dental & Oral Care</h3>
+                <p>Comprehensive dental services to keep your smile healthy and beautiful at every age.</p>
+                <ul class="service-list">
+                    <li>Routine Dental Exams</li>
+                    <li>Teeth Cleaning & Whitening</li>
+                    <li>Cavity Treatment & Fillings</li>
+                    <li>Root Canal Therapy</li>
+                    <li>Pediatric Dentistry</li>
+                </ul>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">👶</div>
+                <h3>Pediatric Consultation</h3>
+                <p>Specialized care for infants, children, and adolescents focusing on growth and development.</p>
+                <ul class="service-list">
+                    <li>Newborn & Well-Baby Visits</li>
+                    <li>Growth Monitoring</li>
+                    <li>Childhood Vaccinations</li>
+                    <li>Developmental Assessments</li>
+                    <li>Common Childhood Illnesses</li>
+                </ul>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">👁️</div>
+                <h3>Eye & Vision Support</h3>
+                <p>Complete eye care services to protect and enhance your vision for years to come.</p>
+                <ul class="service-list">
+                    <li>Comprehensive Eye Exams</li>
+                    <li>Vision Testing</li>
+                    <li>Eye Infection Treatment</li>
+                    <li>Prescription Glasses</li>
+                    <li>Dry Eye Management</li>
+                </ul>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">🔬</div>
+                <h3>Diagnostic Services</h3>
+                <p>State-of-the-art diagnostic facilities for accurate and timely health assessments.</p>
+                <ul class="service-list">
+                    <li>Laboratory Tests</li>
+                    <li>X-Ray Services</li>
+                    <li>ECG & Monitoring</li>
+                    <li>Blood Tests</li>
+                    <li>Health Packages</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="about-container">
+        <div class="about-image fade-in">
+            <div class="about-image-wrapper">
+                <svg width="100%" height="500" viewBox="0 0 500 500" style="background: linear-gradient(135deg, #E8F4F8, #F0F8F0);">
+                    <rect x="50" y="100" width="400" height="300" rx="20" fill="#fff" opacity="0.9"/>
+                    <circle cx="150" cy="200" r="40" fill="#1E73BE" opacity="0.3"/>
+                    <circle cx="350" cy="300" r="30" fill="#28A745" opacity="0.3"/>
+                    <rect x="100" y="250" width="300" height="20" rx="10" fill="#1E73BE" opacity="0.2"/>
+                    <rect x="100" y="290" width="250" height="20" rx="10" fill="#28A745" opacity="0.2"/>
+                    <text x="250" y="200" text-anchor="middle" font-size="24" fill="#0F4C81" font-weight="bold">Spoorthi Clinic</text>
+                    <text x="250" y="230" text-anchor="middle" font-size="16" fill="#6C757D">Trusted Healthcare</text>
+                </svg>
+            </div>
+            <div class="about-badge">
+                <div class="badge-number">15+</div>
+                <div class="badge-text">Years of Excellence</div>
+            </div>
+        </div>
+        <div class="about-content fade-in">
+            <span class="section-label">About Spoorthi Clinic</span>
+            <h2>Committed to Your Health & Well-being</h2>
+            <p>Established as a cornerstone of healthcare in Thokkottu, Spoorthi Clinic has been serving families for over 15 years with dedication, expertise, and compassion. Our multi-specialty approach ensures that your entire family receives comprehensive care without the hassle of visiting multiple locations.</p>
+            <p>We believe in building lasting relationships with our patients through personalized care, advanced treatments, and a warm, welcoming environment. Our team of experienced doctors and healthcare professionals is committed to providing the highest standard of medical excellence.</p>
+            
+            <div class="why-choose">
+                <h3>Why Choose Spoorthi Clinic</h3>
+                <div class="why-list">
+                    <div class="why-item">
+                        <div class="why-icon">⭐</div>
+                        <div class="why-text">
+                            <h4>Experienced Medical Team</h4>
+                            <p>Our doctors bring decades of combined experience and continuous training in the latest medical advances.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🏥</div>
+                        <div class="why-text">
+                            <h4>Comprehensive Multi-Specialty Care</h4>
+                            <p>Access five major specialties under one roof, saving you time and ensuring coordinated healthcare.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">❤️</div>
+                        <div class="why-text">
+                            <h4>Patient-Centric Approach</h4>
+                            <p>We prioritize your comfort, privacy, and individual health needs with personalized treatment plans.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">📍</div>
+                        <div class="why-text">
+                            <h4>Convenient Location & Hours</h4>
+                            <p>Centrally located in Thokkottu with flexible scheduling including evening appointments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <div class="testimonials-container">
+        <div class="section-header fade-in">
+            <span class="section-label">Patient Reviews</span>
+            <h2>What Our Patients Say</h2>
+            <p>Real experiences from families who trust us with their healthcare needs.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">The doctors at Spoorthi Clinic are incredibly professional and caring. They took the time to listen to all my concerns and explained everything clearly. The clinic is clean, well-organized, and I never have to wait long. Highly recommend for families!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RK</div>
+                    <div class="author-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>Parent, Thokkottu</p>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">I've been bringing my children here for their check-ups and vaccinations. The pediatrician is wonderful with kids and makes them feel comfortable. It's such a relief to have a trusted clinic nearby that handles everything from dental to general health.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PS</div>
+                    <div class="author-info">
+                        <h4>Priya Shetty</h4>
+                        <p>Mother of two, Mangaluru</p>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">After struggling with joint pain for months, I consulted the orthopedic specialist here. The treatment plan was effective, and I'm finally pain-free! The entire team is supportive and the clinic offers great value for quality healthcare.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AN</div>
+                    <div class="author-info">
+                        <h4>Anil Nayak</h4>
+                        <p>Working Professional</p>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Excellent dental care! I was nervous about my root canal procedure, but the dentist was gentle and explained each step. The clinic maintains high hygiene standards and the staff is always friendly and helpful.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Meera Shenoy</h4>
+                        <p>Thokkottu Resident</p>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">As someone who travels frequently for work, having flexible appointment times is crucial. Spoorthi Clinic accommodates my schedule perfectly. The doctors are thorough and genuinely care about their patients' well-being.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">VD</div>
+                    <div class="author-info">
+                        <h4>Vikram D'Souza</h4>
+                        <p>Business Owner</p>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="contact-container">
+        <div class="contact-info fade-in">
+            <span class="section-label">Get in Touch</span>
+            <h2>Visit Us or Book an Appointment</h2>
+            <p>We're here to help with all your healthcare needs. Reach out to schedule an appointment or learn more about our services.</p>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h4>Phone</h4>
+                        <p><a href="tel:08242461001">📞 0824-2461001</a></p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.3rem;">Call for appointments or inquiries</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h4>Location</h4>
+                        <p>Spoorthi Clinic, Thokkottu<br>Mangaluru, Karnataka, India</p>
+                        <p><a href="https://maps.app.goo.gl/LEME7dDc7yy8fRwF9?g_st=ic" target="_blank">Get Directions →</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-content">
+                        <h4>Operating Hours</h4>
+                        <table class="hours-table">
+                            <tr>
+                                <td>Monday - Saturday</td>
+                                <td>10:30 AM - 9:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Closed</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form-wrapper fade-in">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <h3>Book an Appointment</h3>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Required *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="general">General & Medical Services</option>
+                        <option value="ortho">Orthopaedics</option>
+                        <option value="dental">Dental & Oral Care</option>
+                        <option value="pediatric">Pediatric Consultation</option>
+                        <option value="eye">Eye & Vision Support</option>
+                        <option value="diagnostic">Diagnostic Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your concerns or preferred appointment time..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit Appointment Request</button>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 1rem; text-align: center;">We'll contact you within 24 hours to confirm your appointment.</p>
+            </form>
+        </div>
+    </div>
+    
+    <div class="map-container fade-in" style="max-width: 1400px; margin: 4rem auto 0;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.234!2d74.885!3d12.875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUyJzMwLjAiTiA3NMKwNTMnMDYuMCJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>Spoorthi Clinic</h3>
+            <p>Your trusted healthcare partner in Thokkottu, Mangaluru. Providing comprehensive multi-specialty care with compassion and expertise for over 15 years.</p>
+            <p style="margin-top: 1rem;">
+                <a href="tel:08242461001" style="color: var(--accent-green); text-decoration: none; font-weight: 600; font-size: 1.2rem;">📞 0824-2461001</a>
+            </p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+                <li><a href="#services">General Medicine</a></li>
+                <li><a href="#services">Orthopaedics</a></li>
+                <li><a href="#services">Dental Care</a></li>
+                <li><a href="#services">Pediatrics</a></li>
+                <li><a href="#services">Eye Care</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Hours</h4>
+            <ul class="footer-links">
+                <li>Mon - Sat: 10:30 AM - 9:00 PM</li>
+                <li>Sunday: Closed</li>
+                <li style="margin-top: 1.5rem;"><a href="https://maps.app.goo.gl/LEME7dDc7yy8fRwF9?g_st=ic" target="_blank" style="color: var(--accent-green);">Get Directions →</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Spoorthi Clinic. All rights reserved. | Thokkottu, Mangaluru, Karnataka</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Navbar scroll effect
+    const navWrapper = document.querySelector('.nav-wrapper');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navWrapper.classList.add('scrolled');
+        } else {
+            navWrapper.classList.remove('scrolled');
+        }
+    });
+
+    // Fade in on scroll animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
+    });
+
+    // Form submission handler
+    function handleSubmit(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+        
+        alert(`Thank you for your appointment request, ${data.name}!\n\nWe'll contact you at ${data.phone} within 24 hours to confirm your appointment for ${data.service}.\n\nYou can also call us directly at 0824-2461001 for immediate assistance.`);
+        
+        event.target.reset();
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    // Close mobile menu if open
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    
+                    // Smooth scroll with offset for fixed nav
+                    const navHeight = document.querySelector('.nav-wrapper').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Highlight contact form if clicking Book Appointment
+                    if (href === '#contact' && this.textContent.includes('Book Appointment')) {
+                        setTimeout(() => {
+                            const contactForm = document.querySelector('.contact-form-wrapper');
+                            if (contactForm) {
+                                contactForm.classList.add('highlight');
+                                setTimeout(() => {
+                                    contactForm.classList.remove('highlight');
+                                }, 2000);
+                            }
+                        }, 800);
+                    }
+                }
+            }
+        });
+    });
+</script>
+```
+
+</body>
+</html>
